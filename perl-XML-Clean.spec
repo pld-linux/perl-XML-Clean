@@ -5,20 +5,19 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	XML
 %define	pnam	Clean
-Summary:	XML::Clean - Ensure, that (HTML) text pass throught an XML parser.
-#Summary(pl.UTF-8):	
+Summary:	XML::Clean - Ensure, that (HTML) text pass throught an XML parser
+Summary(pl.UTF-8):	XML::Clean - sprawdzanie czy tekst (HTML) przechodzi przez analizator XML-a
 Name:		perl-XML-Clean
 Version:	1.06
 Release:	1
-License:	same as perl
+# same as perl
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://search.cpan.org/CPAN/authors/id/P/PK/PKUBANEK/XML-Clean-1.06.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/XML/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	1429eec26fdecc974086b3808a450501
 URL:		http://search.cpan.org/dist/XML-Clean/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
-%if %{with tests}
-%endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -33,6 +32,19 @@ will be closing tag as well, and they will form a tree structure).
 When you add some extra parameters, you will receive complete XML
 text, including XML head and root element (if none were defined in
 text, then some will be added).
+
+%description -l pl.UTF-8
+Zasadniczym zadaniem tego modułu jest stworzenie z nie-XML-owego
+tekstu tekstu, który z dużym prawdopodobieństwem przejdzie przez
+dowolny analizator XML-a.
+
+Podstawowe czyszczenie to tylko dopasowywanie znaczników XML (dla
+każdego otwierającego znacznika musi istnieć także znacznik zamykający
+i muszą tworzyć strukturę drzewiastą).
+
+W przypadku dodania dodatkowych parametrów otrzymujemy kompletny tekst
+XML, zawierający nagłówek i główny element (jeśli nie zostały
+zdefiniowane w tekście, zostaną dodane).
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}

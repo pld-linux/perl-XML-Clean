@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_without	tests		# do not perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 %define	pdir	XML
 %define	pnam	Clean
 Summary:	XML::Clean - Ensure, that (HTML) text pass throught an XML parser
